@@ -1,0 +1,30 @@
+.carousel {
+  height: 700px; /* Altura específica */
+}
+
+.carousel-inner {
+  height: 100%; /* Asegurar que las imágenes llenen el carrusel */
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover; /* Ajustar las imágenes al tamaño del carrusel */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Asegura que el texto sea legible */
+}
+
+/* Fondo semitransparente opcional para mejorar la legibilidad del texto */
+.carousel-caption h5,
+.carousel-caption p {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}

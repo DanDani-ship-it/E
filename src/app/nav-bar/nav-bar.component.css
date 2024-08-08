@@ -1,12 +1,19 @@
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de transparencia */
-    transition: background-color 0.3s;
-  }
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Color negro con 50% de transparencia */
+  transition: background-color 0.3s;
+}
 
-  /* Cambiar la barra de navegación cuando se hace scroll */
-  .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9); /* Color negro con 90% de transparencia */
-  }
-
-
-</style>
+/* Cambiar la barra de navegación cuando se hace scroll */
+.navbar.scrolled {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); /* Color negro con 90% de transparencia */
+}
