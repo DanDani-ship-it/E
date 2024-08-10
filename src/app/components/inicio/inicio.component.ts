@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-inicio',
@@ -89,7 +92,7 @@ import { Component } from '@angular/core';
 
     <!-- Contenido de la página -->
 
-    <div class="container mt-5">
+    <div class="container mt-5" data-aos="fade-right">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
           <h2 class="fs-6 text-secondary mb-2 text-uppercase text-center">
@@ -106,7 +109,10 @@ import { Component } from '@angular/core';
     <div class="container overflow-hidden mb-5">
       <div class="row gy-4 gy-md-0 gx-xxl-5">
         <div class="col-12 col-md-4">
-          <div class="card border-0 border-bottom border-primary shadow-sm">
+          <div
+            data-aos="fade-up"
+            class="card border-0 border-bottom border-primary shadow-sm"
+          >
             <div class="card-body p-4 p-xxl-5">
               <figure class="text-center">
                 <img
@@ -136,7 +142,10 @@ import { Component } from '@angular/core';
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card border-0 border-bottom border-primary shadow-sm">
+          <div
+            data-aos="fade-up"
+            class="card border-0 border-bottom border-primary shadow-sm"
+          >
             <div class="card-body p-4 p-xxl-5">
               <figure class="text-center">
                 <img
@@ -167,7 +176,10 @@ import { Component } from '@angular/core';
           </div>
         </div>
         <div class="col-12 col-md-4">
-          <div class="card border-0 border-bottom border-primary shadow-sm">
+          <div
+            class="card border-0 border-bottom border-primary shadow-sm"
+            data-aos="fade-up"
+          >
             <div class="card-body p-4 p-xxl-5">
               <figure class="text-center">
                 <img
@@ -202,4 +214,12 @@ import { Component } from '@angular/core';
   `,
   styleUrl: './inicio.component.css',
 })
-export class InicioComponent {}
+export class InicioComponent implements OnInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+    }
+  }
+}
