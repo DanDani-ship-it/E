@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   template: `
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
@@ -22,19 +26,45 @@ import { Component } from '@angular/core';
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a
+                class="nav-link active"
+                href="#"
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                data-aos="fade-right"
+                data-aos-duration="500"
+                >Inicio</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Servicios</a>
+              <a
+                class="nav-link"
+                routerLink="/propiedades"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                >Propiedades</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Galería</a>
+              <a
+                class="nav-link"
+                href="#"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                >Asesores</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Testimonios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a
+                class="nav-link"
+                href="#"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+                >Contactanos</a
+              >
             </li>
           </ul>
         </div>
@@ -43,4 +73,12 @@ import { Component } from '@angular/core';
   `,
   styleUrl: './nav-bar.component.css',
 })
-export class NavBarComponent {}
+export class NavBarComponent implements OnInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+    }
+  }
+}

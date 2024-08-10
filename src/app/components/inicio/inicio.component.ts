@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
   standalone: true,
   imports: [],
   template: `
-    <div
+    <!-- <div
       id="carouselExampleCaptions"
       class="carousel slide"
       data-bs-ride="carousel"
@@ -43,8 +43,8 @@ import 'aos/dist/aos.css';
             alt="..."
           />
           <div class="carousel-caption d-none d-md-block">
-            <h2>First slide label</h2>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h2 data-aos="fade-right">Bienvenido</h2>
+            <p data-aos="fade-left">Una Pagina hecha por DanDani</p>
           </div>
         </div>
         <div class="carousel-item">
@@ -54,8 +54,8 @@ import 'aos/dist/aos.css';
             alt="..."
           />
           <div class="carousel-caption d-none d-md-block">
-            <h2>Second slide label</h2>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h2 data-aos="fade-right">Es mi primera pagina web</h2>
+            <p data-aos="fade-left">GG.</p>
           </div>
         </div>
         <div class="carousel-item">
@@ -65,8 +65,8 @@ import 'aos/dist/aos.css';
             alt="..."
           />
           <div class="carousel-caption d-none d-md-block">
-            <h2>Third slide label</h2>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h2 data-aos="fade-right">Skibidi Toilet</h2>
+            <p data-aos="fade-left">Hola Mundo</p>
           </div>
         </div>
       </div>
@@ -88,6 +88,13 @@ import 'aos/dist/aos.css';
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div> -->
+
+    <div class="header-image">
+      <div class="header-content">
+        <h1 data-aos="fade-right" data-aos-duration="2000">Bienvenidos</h1>
+        <p data-aos="fade-right"></p>
+      </div>
     </div>
 
     <!-- Contenido de la página -->
@@ -110,6 +117,7 @@ import 'aos/dist/aos.css';
       <div class="row gy-4 gy-md-0 gx-xxl-5">
         <div class="col-12 col-md-4">
           <div
+            data-aos-offset="300"
             data-aos="fade-up"
             class="card border-0 border-bottom border-primary shadow-sm"
           >
@@ -143,6 +151,7 @@ import 'aos/dist/aos.css';
         </div>
         <div class="col-12 col-md-4">
           <div
+            data-aos-offset="300"
             data-aos="fade-up"
             class="card border-0 border-bottom border-primary shadow-sm"
           >
@@ -179,6 +188,7 @@ import 'aos/dist/aos.css';
           <div
             class="card border-0 border-bottom border-primary shadow-sm"
             data-aos="fade-up"
+            data-aos-offset="300"
           >
             <div class="card-body p-4 p-xxl-5">
               <figure class="text-center">
