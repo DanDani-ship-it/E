@@ -1,10 +1,14 @@
-/* Imagen de fondo para la sección de encabezado */
 .header-image {
   background-image: url("https://cdn.pixabay.com/photo/2024/01/27/19/02/building-8536587_1280.jpg");
   background-size: cover;
   background-position: center;
   height: 70vh; /* Ajusta la altura como necesites */
   position: relative;
+  transition: transform 0.3s ease; /* Suaviza la animación */
+}
+
+.header-image.expanded {
+  transform: scale(1.2); /* Expande la imagen */
 }
 
 /* Texto centrado en la imagen de fondo */

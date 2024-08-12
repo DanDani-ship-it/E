@@ -1,4 +1,10 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+  HostListener,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -226,10 +232,24 @@ import 'aos/dist/aos.css';
 })
 export class InicioComponent implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
+  @HostListener('window:scroll', [])
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init();
+    }
+  }
+
+  onWindowScroll() {
+    const headerImage = document.getElementById('headerImage');
+    if (headerImage) {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 50) {
+        // Ajusta este valor según cuándo quieres que la imagen se expanda
+        headerImage.classList.add('expanded');
+      } else {
+        headerImage.classList.remove('expanded');
+      }
     }
   }
 }
